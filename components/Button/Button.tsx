@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { css, SerializedStyles } from '@emotion/react'
 
 import { AppTheme } from '@/styles/themes'
+import { boxShadow, transition } from '@/components/styles'
 
 export const COLOR = {
   PRIMARY: 'primary',
@@ -58,16 +59,14 @@ export const Button = styled.button<Props>`
   width: 15rem;
   height: 4rem;
   border-radius: 1rem;
-  transition: all 0.4s ease;
+  ${transition()}
   ${({ theme, color }) => getColors(theme, color)}
-  ${({ theme }) =>
-    `box-shadow: 0.5vmin 0.5vmin 1vmin ${theme.components.shadow1}, -0.5vmin -0.5vmin 1vmin ${theme.components.shadow1}`};
+  ${({ theme }) => boxShadow(theme.components.shadow1, theme.components.shadow2)}
   &:hover {
     opacity: 0.9;
   }
   &:active {
-    ${({ theme }) =>
-      `box-shadow: 0.5vmin 0.5vmin 1vmin ${theme.components.shadow1} inset, -0.5vmin -0.5vmin 1vmin ${theme.components.shadow1} inset`};
+    ${({ theme }) => boxShadow(theme.components.shadow1, theme.components.shadow2, true)}
   }
 `
 
