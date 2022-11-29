@@ -11,7 +11,7 @@ Object.defineProperty(NextImage, 'default', {
 })
 
 const withThemeProvider = (Story, context) => {
-  const background = context.globals.backgrounds?.values || parameters.backgrounds.defaultColor
+  const background = context.globals.backgrounds?.value || parameters.backgrounds.defaultColor
   const theme = Object.values(Themes).find((theme) => theme.background === background)
 
   return (
