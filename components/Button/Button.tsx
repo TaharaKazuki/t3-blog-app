@@ -17,7 +17,7 @@ export type ColorType = typeof COLOR[keyof typeof COLOR]
 export type Props = {
   children: string
   color?: ColorType
-  theme: AppTheme
+  theme?: AppTheme
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
